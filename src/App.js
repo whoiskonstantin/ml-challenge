@@ -1,10 +1,10 @@
 import './App.css'
-import FavoriteButtonWithState from 'components/FavoriteButtonWithState'
+import ButtonTestContainer from 'components/ButtonTestContainer'
 
 function App() {
   return (
     <div className='App'>
-      <FavoriteButtonWithState />
+      <ButtonTestContainer />
     </div>
   )
 }
