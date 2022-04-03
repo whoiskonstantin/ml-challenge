@@ -6,7 +6,7 @@ const FavoriteButton = () => {
     <button aria-label='Favorite this' type='submit' id='favorite-heart-button-with-counter' className='button'>
       <HeartEmpty fill='red' />
       <HeartFilled />
-      <span data-view-component='true' class='d-inline'>
+      <span data-view-component='true' className='favorite-button-text'>
         Favorite
       </span>
       <span id='favorite-button-counter' aria-label='0 users favorited this resource'>
