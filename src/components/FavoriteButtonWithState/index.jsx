@@ -2,31 +2,42 @@ import React, { useState } from 'react'
 
 import FavoriteButton from 'components/FavoriteButton'
 
-const buttonsInittialState = {
-  1: false,
-  2: false,
-  3: false,
-}
+const buttonsInittialState = [
+  { key: 1, isClicked: false },
+  { key: 2, isClicked: false },
+  { key: 3, isClicked: false },
+]
 
 const FavoriteButtonWithState = () => {
   const [count, setCount] = useState(0)
   const [buttonsState, setButtonsState] = useState(buttonsInittialState)
 
-  const onClick = button => {
-    // Create new state.
-    const newButtonsState = { ...buttonsState, [button]: !buttonsState[button] } // Update the right button.
-    const newCountState = Object.values(newButtonsState).filter(isClicked => isClicked).length // Count the number of true values.
-    // Update the state.
+  const onClick = buttonKey => {
+    // Create new buttons state.
+    const newButtonsState = buttonsState.reduce((newState, button) => {
+      if (button.key === buttonKey) {
+        return [...newState, { ...button, isClicked: !button.isClicked }]
+      }
+      return [...newState, button]
+    }, [])
+
+    // Create new count state based on new buttons state.
+    const newCountState = newButtonsState.reduce((total, button) => {
+      if (button.isClicked) {
+        return total + 1
+      }
+      return total
+    }, 0)
+
+    // Update the states.
     setCount(newCountState)
     setButtonsState(newButtonsState)
   }
 
-  const buttons = Object.keys(buttonsState) // ButtonsState keys: ['1', '2', '3']
-
   return (
     <>
-      {buttons.map(button => (
-        <FavoriteButton key={button} on={buttonsState[button]} count={count} onClick={() => onClick(button)} />
+      {buttonsState.map(button => (
+        <FavoriteButton key={button.key} on={button.isClicked} count={count} onClick={() => onClick(button.key)} />
       ))}
     </>
   )
