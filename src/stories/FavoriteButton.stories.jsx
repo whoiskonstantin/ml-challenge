@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 
 import FavoriteButton from 'components/FavoriteButton'
 import { ReactComponent as HeartEmpty } from 'assets/heart-empty.svg'
