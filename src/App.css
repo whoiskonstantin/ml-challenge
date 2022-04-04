@@ -35,11 +35,6 @@ span {
   padding: 9px;
 }
 
-/* Fix for rendering correctly in story book */
-.sb-main-padded.sb-show-main .button.dropdown {
-  bottom: 5.5px;
-}
-
 .button.dropdown svg {
   fill: #2a82c1;
   width: 10px;
