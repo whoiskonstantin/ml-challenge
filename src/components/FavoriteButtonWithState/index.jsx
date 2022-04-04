@@ -25,12 +25,12 @@ const FavoriteButtonWithState = () => {
 
   const onClick = buttonKey => {
     // Create new buttons state.
-    const newButtonsState = buttonsState.reduce((newState, button) => {
+    const newButtonsState = buttonsState.map(button => {
       if (button.key === buttonKey) {
-        return [...newState, { ...button, isClicked: !button.isClicked, fk: button.isClicked ? null : fk }]
+        return { ...button, isClicked: !button.isClicked, fk: button.isClicked ? null : fk }
       }
-      return [...newState, button]
-    }, [])
+      return button
+    })
 
     // Create new count state based on new buttons state.
     const newCountState = newButtonsState.reduce((total, button) => {
