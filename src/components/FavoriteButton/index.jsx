@@ -50,7 +50,7 @@ const FavoriteButton = ({
   dropdown = true, // toggle to see dropdown
 }) => {
   return (
-    <>
+    <div>
       <button aria-label='Favorite this' className='button' onClick={onClick} type='submit'>
         <div id='favorite-heart-button-with-counter'>
           {on ? icons[0] : icons[1]}
@@ -63,7 +63,7 @@ const FavoriteButton = ({
         </div>
       </button>
       <Dropdown on={dropdown} />
-    </>
+    </div>
   )
 }
 
