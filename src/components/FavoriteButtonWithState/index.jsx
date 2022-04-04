@@ -2,7 +2,7 @@ import { useState } from 'react'
 import FavoriteButton from 'components/FavoriteButton'
 
 // Change this value to true to show the foreign key.
-const showForeignKey = true
+const showForeignKey = false
 
 //  Since foeign key is passed FavoriteButtonWithState component might as well show it.
 const ForeignKey = ({ fk }) => {

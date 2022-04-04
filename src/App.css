@@ -1,5 +1,4 @@
 .button {
-  border: none;
   color: #2a82c1;
   border: 2px solid #2a82c1;
   border-radius: 10px;
@@ -10,8 +9,45 @@
   font-size: 16px;
   min-width: 150px;
   transition-duration: 0.4s;
+  background-color: #ffffff;
 }
 
+#favorite-heart-button-with-counter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button svg,
+span {
+  margin: auto 0;
+}
+
+.button.dropdown {
+  position: relative;
+  bottom: 4px;
+  height: 38px;
+  max-width: 49px;
+  left: -17px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 5px;
+  min-width: 0;
+  padding: 9px;
+}
+
+/* Fix for rendering correctly in story book */
+.sb-main-padded.sb-show-main .button.dropdown {
+  bottom: 5.5px;
+}
+
+.button.dropdown svg {
+  fill: #2a82c1;
+  width: 10px;
+}
+
+.button.dropdown:hover svg {
+  fill: #fbfbfb;
+}
 .button:hover {
   cursor: pointer;
   background-color: #2a82c1;
@@ -22,4 +58,28 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 50px;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  border: 2px solid #2a82c1;
+  box-sizing: border-box;
+  color: #2a82c1;
+  margin-top: 1px;
+  padding: 0 8px;
+  width: 170px;
+}
+
+.dropdown-menu li {
+  display: block;
+  padding: 5px;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #146299;
 }

@@ -31,6 +31,7 @@ const ButtonTestContainer = () => {
       return button
     })
 
+    // Save buttons state and counter state to local storage.
     localStorage.setItem(`buttonsState-for-${fkType}`, JSON.stringify(newButtonsState))
     localStorage.setItem(`buttonsClicks-for-${fkType}`, JSON.stringify(newCount))
 
